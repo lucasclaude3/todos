@@ -31,6 +31,9 @@ function createAddWindow() {
     title: 'Add New Todo'
   });
   addWindow.loadURL(`file://${__dirname}/add.html`);
+  addWindow.on('close', () => {
+    addWindow = null;
+  });
 }
 
 ipcMain.on('todo:add', (event, todo) => {
