@@ -14,5 +14,9 @@
 
             document.querySelector('#list').append(li);
         });
+
+        ipcRenderer.on('todos:clear', () => {
+            document.querySelector('#list').innerHTML = "";
+        })
     </script>
 </body>
