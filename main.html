@@ -1,4 +1,18 @@
 <head></head>
 <body>
     <h1>My todos</h1>
+    <ul id="list">
+    </ul>
+
+    <script>
+        const electron = require('electron');
+        const { ipcRenderer } = electron;
+
+        ipcRenderer.on('todo:add', (event, todo) => {
+            const li = document.createElement('li');
+            li.textContent = todo;
+
+            document.querySelector('#list').append(li);
+        });
+    </script>
 </body>
