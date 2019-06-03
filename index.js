@@ -18,12 +18,16 @@ app.on('ready', () => {
 
 const menuTemplate = [
   {
-    label: '',
-  },
-  {
     label: 'File',
     submenu: [
-      { label: 'New Todo'}
+      { label: 'New Todo' },
+      { label: 'Quit' },
     ]
   }
 ];
+
+if (process.platform === 'darwin') {
+  menuTemplate.unshift(
+    { label: '' },
+  );
+}
