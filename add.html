@@ -7,4 +7,15 @@
         </div>
         <button id="submit" type="submit">Add</button>
     </form>
+
+    <script>
+        const electron = require('electron');
+        const { ipcRenderer } = electron;
+
+        document.querySelector('#form').addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            debugger;
+        });
+    </script>
 </body>
